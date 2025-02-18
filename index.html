@@ -1,223 +1,91 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrossel de Imagens</title>
+
+<html lang="pt-BR">
+
+  <head>
+
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Relógio Digital Verde Militar</title>
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
 
-        body {
-            font-family: 'Arial', sans-serif;
-        }
+      body {
 
-        .carrossel-container {
-            position: relative;
-            width: 100%;
-            height: 590px;
-            margin: 20px auto;
-            overflow: hidden;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-        }
+        font-family: "Courier New", monospace;
 
-        .carrossel {
-            display: flex;
-            transition: transform 1s ease-in-out;
-        }
+        text-align: center;
 
-        .card-carrossel {
-            min-width: 100%;
-            height: 100%;
-            position: relative;
-            transform-origin: center;
-            transition: transform 1s ease-in-out, opacity 1s ease;
-        }
+        background-color: #2e2e2e;
 
-        .card-carrossel img {
-            object-fit: contain; /* Garantindo que as imagens não fiquem distorcidas */
-            object-position: center; /* Centraliza a imagem no contêiner */
-            width: 100%; /* Ajusta a largura da imagem para o contêiner */
-            height: 100%; /* Ajusta a altura da imagem para o contêiner */
-            border-radius: 20px;
-        }
+        color: #4e5d2f; /* Cor verde militar */
 
-        /* Efeito de transição */
-        .card-carrossel.active {
-            opacity: 1;
-            transform: scale(1);
-        }
+        margin: 0;
 
-        .card-carrossel.prev {
-            opacity: 0.5;
-            transform: scale(0.9);
-        }
+        padding: 0;
 
-        .card-carrossel.next {
-            opacity: 0.5;
-            transform: scale(0.9);
-        }
+      }
 
-        /* Bolinhas de navegação */
-        .bolinhas {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-        }
 
-        .bolinha {
-            width: 15px;
-            height: 15px;
-            border-radius: 50%;
-            background-color: #bbb;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
 
-        .bolinha.active {
-            background-color: #3b3b3b;
-            transform: scale(1.3);
-        }
+      #clock {
 
-        .bolinha:hover {
-            background-color: #717171;
-            transform: scale(1.2);
-        }
+        font-size: 60px;
+
+        padding: 20px;
+
+        background-color: #1c1c1c;
+
+        border-radius: 10px;
+
+        display: inline-block;
+
+        margin-top: 50px;
+
+      }
 
     </style>
-</head>
-<body>
 
-<div class="carrossel-container">
-    <div class="carrossel">
-        <div class="card-carrossel active">
-            <img src="https://www.liebherr.i/sites/LBR/PublishingImages/Projeto/HOME%20LBR-LAB/CARROSSEL/GUINDASTE%20AMARELO_melhorado.jpg" alt="Imagem 1">
-        </div>
-        <div class="card-carrossel">
-            <img src="https://www.liebherr.i/sites/LBR/PublishingImages/Projeto/HOME%20LBR-LAB/CARROSSEL/CAMINHAO%20AMARELO.jpg" alt="Imagem 2">
-        </div>
-        <div class="card-carrossel">
-            <img src="https://www.liebherr.i/sites/LBR/PublishingImages/Projeto/HOME%20LBR-LAB/CARROSSEL/Imagem6_melhorada.jpg" alt="Imagem 3">
-        </div>
-        <div class="card-carrossel">
-            <img src="https://www.liebherr.i/sites/LBR/PublishingImages/Projeto/HOME%20LBR-LAB/CARROSSEL/TRATOR.jpg" alt="Imagem 4">
-        </div>
-        <div class="card-carrossel">
-            <img src="https://www.liebherr.i/sites/LBR/PublishingImages/Projeto/HOME%20LBR-LAB/CARROSSEL/Imagem11.png" alt="Imagem 5">
-        </div>
-        <div class="card-carrossel">
-            <img src="https://www.liebherr.i/sites/LBR/PublishingImages/Projeto/HOME%20LBR-LAB/CARROSSEL/Imagem9.jpg" alt="Imagem 6">
-        </div>
-        <div class="card-carrossel">
-            <img src="https://www.liebherr.i/sites/LBR/PublishingImages/Projeto/HOME%20LBR-LAB/CARROSSEL/Imagem13%20_melhorada.jpg" alt="Imagem 7">
-        </div>
-        <div class="card-carrossel">
-            <img src="https://www.liebherr.i/sites/LBR/PublishingImages/Projeto/HOME%20LBR-LAB/CARROSSEL/GUINDASTE.jpg" alt="Imagem 8">
-        </div>
-        <div class="card-carrossel">
-            <img src="https://www.liebherr.i/sites/LBR/PublishingImages/Projeto/HOME%20LBR-LAB/CARROSSEL/Imagem14.jpg" alt="Imagem 9">
-        </div>
-        <!-- <div class="card-carrossel">
-            <img src="https://www.liebherr.i/sites/LBR/PublishingImages/Projeto/HOME%20LBR-LAB/CARROSSEL/Marca_Outubro_Rosa_SSM_Liebherr_1.jpg" alt="Imagem 10">
-        </div> -->
-    </div>
+  </head>
 
-    <!-- Bolinhas de navegação -->
-    <div class="bolinhas">
-        <!-- As bolinhas serão geradas dinamicamente pelo JS -->
-    </div>
-</div>
+  <body>
 
-<script>
-    let index = 0;
-    const cards = document.querySelectorAll('.carrossel .card-carrossel');
-    const bolinhasContainer = document.querySelector('.bolinhas');
-    const totalCards = cards.length;
-    let autoMoveInterval;
+    <div id="clock"></div>
 
-    // Função para mover o carrossel
-    function moveCarrossel(direction) {
-        index += direction;
 
-        if (index < 0) {
-            index = totalCards - 1;
-        } else if (index >= totalCards) {
-            index = 0;
-        }
 
-        updateCarrossel();
-        resetAutoMove(); // Reseta o temporizador sempre que a bolinha for pressionada
-    }
+    <script>
 
-    // Função para atualizar a posição do carrossel
-    function updateCarrossel() {
-        const newTransform = -index * 100;
-        document.querySelector('.carrossel').style.transform = `translateX(${newTransform}%)`;
+      function updateClock() {
 
-        // Atualizando o localizador de bolinhas
-        const bolinhas = document.querySelectorAll('.bolinha');
-        bolinhas.forEach((bolinha, i) => {
-            if (i === index) {
-                bolinha.classList.add('active');
-            } else {
-                bolinha.classList.remove('active');
-            }
-        });
+        const now = new Date();
 
-        // Atualizando as classes das cartas para o efeito de parallax
-        cards.forEach((card, i) => {
-            card.classList.remove('active', 'prev', 'next');
-            if (i === index) {
-                card.classList.add('active');
-            } else if (i === index - 1 || (index === 0 && i === totalCards - 1)) {
-                card.classList.add('prev');
-            } else if (i === index + 1 || (index === totalCards - 1 && i === 0)) {
-                card.classList.add('next');
-            }
-        });
-    }
+        const hours = String(now.getHours()).padStart(2, "0");
 
-    // Função para criar as bolinhas
-    function createBolinhas() {
-        for (let i = 0; i < totalCards; i++) {
-            const bolinha = document.createElement('span');
-            bolinha.classList.add('bolinha');
-            bolinha.addEventListener('click', () => {
-                index = i;
-                updateCarrossel();
-                resetAutoMove(); // Reseta o temporizador ao clicar na bolinha
-            });
-            bolinhasContainer.appendChild(bolinha);
-        }
-    }
+        const minutes = String(now.getMinutes()).padStart(2, "0");
 
-    // Função para iniciar o movimento automático
-    function startAutoMove() {
-        autoMoveInterval = setInterval(() => {
-            moveCarrossel(1);
-        }, 5000);
-    }
+        const seconds = String(now.getSeconds()).padStart(2, "0");
 
-    // Função para resetar o temporizador
-    function resetAutoMove() {
-        clearInterval(autoMoveInterval); // Limpa o temporizador anterior
-        startAutoMove(); // Reinicia o temporizador
-    }
 
-    // Configura o carrossel
-    createBolinhas();
-    updateCarrossel();
-    startAutoMove(); // Começa o movimento automático
 
-</script>
+        document.getElementById(
 
-</body>
+          "clock"
+
+        ).textContent = `${hours}:${minutes}:${seconds}`;
+
+      }
+
+
+
+      setInterval(updateClock, 1000);
+
+      updateClock(); // Chama imediatamente para mostrar o horário ao carregar a página
+
+    </script>
+
+  </body>
+
 </html>

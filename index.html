@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+  <head>
+
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Relógio Digital Verde Militar</title>
+
+    <style>
+
+      body {
+
+        font-family: "Courier New", monospace;
+
+        text-align: center;
+
+        background-color: #2e2e2e;
+
+        color: #4e5d2f; /* Cor verde militar */
+
+        margin: 0;
+
+        padding: 0;
+
+      }
+
+
+
+      #clock {
+
+        font-size: 60px;
+
+        padding: 20px;
+
+        background-color: #1c1c1c;
+
+        border-radius: 10px;
+
+        display: inline-block;
+
+        margin-top: 50px;
+
+      }
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <div id="clock"></div>
+
+
+
+    <script>
+
+      function updateClock() {
+
+        const now = new Date();
+
+        const hours = String(now.getHours()).padStart(2, "0");
+
+        const minutes = String(now.getMinutes()).padStart(2, "0");
+
+        const seconds = String(now.getSeconds()).padStart(2, "0");
+
+
+
+        document.getElementById(
+
+          "clock"
+
+        ).textContent = `${hours}:${minutes}:${seconds}`;
+
+      }
+
+
+
+      setInterval(updateClock, 1000);
+
+      updateClock(); // Chama imediatamente para mostrar o horário ao carregar a página
+
+    </script>
+
+  </body>
+
+</html>
